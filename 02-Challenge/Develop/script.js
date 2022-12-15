@@ -1,0 +1,42 @@
+$( "#root" ).ready( "https://code.jquery.com/jquery-3.4.1.min.js" );
+// added root element dom and added .ready() load jqury last
+
+
+
+var dayNow = $('#currentDay')
+var timeNow = $('#currentTime');
+var minateNow = $('#currentMinute');
+var hourNow = $('#currentHour');
+
+var time12 = ['8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm'];
+var time24 = ['13pm','14pm','15pm','16pm','17pm','18pm'];
+
+var currentDate = dayjs().format('dddd[,] DD MMMM YYYY');
+var currentHour = dayjs().format('hh:mm:ss A');
+var hour = dayjs().format('HH');
+
+document.getElementById("currentDay").innerHTML = currentDate;
+// added the day.js api to
+
+
+
+
+
+  // TODO: Add a listener for click events on the save button. This code should
+  // use the id in the containing time-block as a key to save the user input in
+  // local storage. HINT: What does `this` reference in the click listener
+  // function? How can DOM traversal be used to get the "hour-x" id of the
+  // time-block containing the button that was clicked? How might the id be
+  // useful when saving the description in local storage?
+  //
+  // TODO: Add code to apply the past, present, or future class to each time
+  // block by comparing the id to the current hour. HINTS: How can the id
+  // attribute of each time-block be used to conditionally add or remove the
+  // past, present, and future classes? How can Day.js be used to get the
+  // current hour in 24-hour time?
+  //
+  // TODO: Add code to get any user input that was saved in localStorage and set
+  // the values of the corresponding textarea elements. HINT: How can the id
+  // attribute of each time-block be used to do this?
+  //
+  // TODO: Add code to display the current date in the header of the page.
