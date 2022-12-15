@@ -1,9 +1,5 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $( "#root" ).ready( "https://code.jquery.com/jquery-3.4.1.min.js" );
 // added root element dom and added .ready() load jqury last
-
 
 
 var dayNow = $('#currentDay')
@@ -37,4 +33,4 @@ document.getElementById("currentDay").innerHTML = currentDate;
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
+
