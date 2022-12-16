@@ -2,19 +2,40 @@ $( "#root" ).ready( "https://code.jquery.com/jquery-3.4.1.min.js" );
 // added root element dom and added .ready() load jqury last
 
 
-var dayNow = $('#currentDay')
-var timeNow = $('#currentTime');
-var minateNow = $('#currentMinute');
-var hourNow = $('#currentHour');
+//var dayNow = $('#currentDay')
+//var timeNow = $('#currentTime');
+//var minateNow = $('#currentMinute');
+//var hourNow = $('#currentHour');
 
-var time12 = ['8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm'];
+var time12 = ['hour-9','hour-10','hour-11','hour-12','hour-13','hour-14','hour-15','hour-16','hour-17'];
 var time24 = ['13pm','14pm','15pm','16pm','17pm','18pm'];
 
 var currentDate = dayjs().format('dddd[,] DD MMMM YYYY');
-var currentHour = dayjs().format('hh:mm:ss A');
-var hour = dayjs().format('HH');
+//ar currentHour = dayjs().format('hh:mm:ss A');
+//var hour = dayjs().format('HH');
 
+
+var textArea = document.getElementsByName('textarea');
 document.getElementById("currentDay").innerHTML = currentDate;
+
+var saveBtn = document.querySelector('.saveBtn');
+
+saveBtn.addEventListener('click',function(){
+
+var timeSlot = document
+
+}
+localStorage.setItem("textSave", JSON.stringify(textSave));
+
+console.log("textSave", JSON.stringify(textSave));
+
+});
+
+
+
+
+
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
