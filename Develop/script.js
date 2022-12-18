@@ -1,7 +1,6 @@
 $( "#root" ).ready( "https://code.jquery.com/jquery-3.4.1.min.js" );
 // added root element dom and added .ready() load jqury last
 
-
 //var dayNow = $('#currentDay')
 //var timeNow = $('#currentTime');
 //var minateNow = $('#currentMinute');
@@ -11,23 +10,25 @@ var time12 = ['hour-9','hour-10','hour-11','hour-12','hour-13','hour-14','hour-1
 var time24 = ['13pm','14pm','15pm','16pm','17pm','18pm'];
 
 var currentDate = dayjs().format('dddd[,] DD MMMM YYYY');
-//ar currentHour = dayjs().format('hh:mm:ss A');
+//var currentHour = dayjs().format('hh:mm:ss A');
 //var hour = dayjs().format('HH');
 
-
-var textArea = document.getElementsByName('textarea');
 document.getElementById("currentDay").innerHTML = currentDate;
 
-var saveBtn = document.querySelector('.saveBtn');
+var textArea = document.getElementsByName('textArea');
+var saveBtn = document.querySelector('#saveBtn');
+
+var input = document.getElementById('#hour-10','#hour-11','#hour-12','#hour-13','#hour-14','#hour-15','#hour-16','#hour-17');
+
 
 saveBtn.addEventListener('click',function(){
 
-var timeSlot = document
+  localStorage.setItem("Save", JSON.stringify(input));
 
-}
-localStorage.setItem("textSave", JSON.stringify(textSave));
+  localStorage.getItem('Save');
 
-console.log("textSave", JSON.stringify(textSave));
+  console.log('Save');
+
 
 });
 
