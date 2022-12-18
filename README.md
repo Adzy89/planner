@@ -18,3 +18,4 @@ Simple enter in an event and press the save button to retain the information
 
 Adzy89
 
+https://github.com/Adzy89/planner
