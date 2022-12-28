@@ -18,51 +18,29 @@ $( document ).ready(function() {
  
    });
 
-   //created query selector select all timeblock elements
-   var timeBlocks = document.querySelectorAll('.time-block');
-
-   timeBlocks.forEach(function(timeBlock) {
-   var timeNow = parseInt(timeBlock.id.split('-')[1]);
    
+   var timeBlocks = $(".time-block");
+   for (var i = 0; i < timeBlocks.length; i++) {
+   var timeblock = parseInt(timeBlocks.eq(i).attr('id').split('-')[1]);
+   var currentTime = dayjs();
+   
+      if (currentTime >= 6 && currentTime < 12) {
+       // Morning color scheme
+      timeBlocks.eq(i).removeClass("past");
+      timeBlocks.eq(i).addClass("present");
+      timeBlocks.eq(i).removeClass("future");
 
-   if (timeNow >= 6 && timeNow < 12) {
+    } if (currentTime >= 12 && currentTime < 18) {
       // Morning color scheme
-      timeBlock.classList.remove("past");
-      timeBlock.classList.remove("future");
-      timeBlock.classList.add("present");
-    } else if (timeNow >= 12 && timeNow < 18) {
-      // Afternoon color scheme
-      timeBlock.classList.remove("past");
-      timeBlock.classList.remove("future");
-      timeBlock.classList.add("present");
+      timeBlocks.eq(i).removeClass("past");
+      timeBlocks.eq(i).addClass("present");
+      timeBlocks.eq(i).removeClass("future");
     } else {
       // Night color scheme
-      timeBlock.classList.remove("past");
-      timeBlock.classList.remove("future");
-      timeBlock.classList.add("present");
-   
-   }
-   
-   });
-
+      timeBlocks.eq(i).removeClass("past");
+      timeBlocks.eq(i).addClass("present");
+      timeBlocks.eq(i).removeClass("future");
+    }
+  
+  };
 });
-
-
-
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
