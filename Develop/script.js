@@ -2,6 +2,8 @@ var currentDay= dayjs().format('dddd, MMM DD YYYY');
 $("#currentDay").html(currentDay);
 
 
+
+
 $( document ).ready(function() {
   
  $(".saveBtn").on('click', function () {
@@ -13,10 +15,40 @@ $( document ).ready(function() {
     inputData.currentTime = $(this).parent().attr("id");
 
     localStorage.setItem(inputData.descriptionInput,inputData.currentTime);
- });
+ 
+   });
 
+   //created query selector select all timeblock elements
+   var timeBlocks = document.querySelectorAll('.time-block');
+
+   timeBlocks.forEach(function(timeBlock) {
+   var timeNow = parseInt(timeBlock.id.split('-')[1]);
+   
+
+   if (timeNow >= 6 && timeNow < 12) {
+      // Morning color scheme
+      timeBlock.classList.remove("past");
+      timeBlock.classList.remove("future");
+      timeBlock.classList.add("present");
+    } else if (timeNow >= 12 && timeNow < 18) {
+      // Afternoon color scheme
+      timeBlock.classList.remove("past");
+      timeBlock.classList.remove("future");
+      timeBlock.classList.add("present");
+    } else {
+      // Night color scheme
+      timeBlock.classList.remove("past");
+      timeBlock.classList.remove("future");
+      timeBlock.classList.add("present");
+   
+   }
+   
+   });
 
 });
+
+
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -34,5 +66,3 @@ $( document ).ready(function() {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-
-
